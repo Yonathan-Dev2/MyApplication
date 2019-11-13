@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tsu Express</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="title_activity_toma_foto">toma_foto</string>
+</resources>
