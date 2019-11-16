@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Administracion">
+        <menu>
+            <item
+                android:id="@+id/ASIG_COLA"
+                android:icon="@drawable/asignar"
+                android:title="Asignar" />
+            <item
+                android:id="@+id/RECE_ENVI"
+                android:icon="@drawable/recepcionar"
+                android:title="Recepcionar" />
+        </menu>
+    </item>
+
+    <item android:title="Operativo">
+        <menu>
+            <item
+                android:id="@+id/OPER_COLA"
+                android:icon="@drawable/operacion"
+                android:title="Operación" />
+        </menu>
+    </item>
+
+    <item android:title="Configuracion">
+        <menu>
+            <item
+                android:id="@+id/CERR_SESI"
+                android:icon="@drawable/cerrar"
+                android:title="Salir" />
+        </menu>
+    </item>
+
+</menu>

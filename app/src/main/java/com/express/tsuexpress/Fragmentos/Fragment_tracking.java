@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.SearchView;
@@ -46,6 +47,7 @@ public class Fragment_tracking extends Fragment {
     TextView txt_tipo_envi, txt_acti_hora_envi;
     ScrollView sclv_codi_envi, sclv_nume_iden;
     RadioButton rdb_codi_envi, rdb_nume_iden;
+    LinearLayout lny_imag_trac;
 
     RecyclerView rv_soli_envi;
     ArrayList<String> ListEnvio;
@@ -73,6 +75,7 @@ public class Fragment_tracking extends Fragment {
         rv_soli_envi        = (RecyclerView) vista.findViewById(R.id.rv_soli_envi);
         rdb_codi_envi       = (RadioButton)  vista.findViewById(R.id.rdb_codi_envi);
         rdb_nume_iden       = (RadioButton)  vista.findViewById(R.id.rdb_nume_iden);
+        lny_imag_trac       = (LinearLayout) vista.findViewById(R.id.lny_imag_trac);
 
         rv_soli_envi.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false));
 
@@ -84,6 +87,7 @@ public class Fragment_tracking extends Fragment {
                     band = 1;
                     sclv_nume_iden.setVisibility(View.GONE);
                     sclv_codi_envi.setVisibility(View.GONE);
+                    lny_imag_trac.setVisibility(View.VISIBLE);
                     sv_trac.clearFocus();
                 }
             }
@@ -96,6 +100,7 @@ public class Fragment_tracking extends Fragment {
                     band = 2;
                     sclv_nume_iden.setVisibility(View.GONE);
                     sclv_codi_envi.setVisibility(View.GONE);
+                    lny_imag_trac.setVisibility(View.VISIBLE);
                     sv_trac.clearFocus();
 
                 }
@@ -111,13 +116,12 @@ public class Fragment_tracking extends Fragment {
                 if (band==1){
                     trac_envi (codi_envi);
                     sclv_nume_iden.setVisibility(View.GONE);
-
                 } else if(band==2) {
                     trac_iden (codi_envi);
                     sclv_codi_envi.setVisibility(View.GONE);
-
                 } else{
                     Toast.makeText(getContext(), "Seleccione una opcion",Toast.LENGTH_SHORT).show();
+                    lny_imag_trac.setVisibility(View.VISIBLE);
                 }
 
                 sv_trac.clearFocus();
@@ -132,6 +136,7 @@ public class Fragment_tracking extends Fragment {
                     sv_trac.clearFocus();
                     sclv_nume_iden.setVisibility(View.GONE);
                     sclv_codi_envi.setVisibility(View.GONE);
+                    lny_imag_trac.setVisibility(View.VISIBLE);
                 }
 
                 return true;
@@ -140,6 +145,7 @@ public class Fragment_tracking extends Fragment {
 
         sclv_codi_envi.setVisibility(View.GONE);
         sclv_nume_iden.setVisibility(View.GONE);
+        lny_imag_trac.setVisibility(View.VISIBLE);
 
         request= Volley.newRequestQueue(getContext());
 
@@ -181,10 +187,11 @@ public class Fragment_tracking extends Fragment {
                             rv_soli_envi.setAdapter(adapter);
 
                             sclv_nume_iden.setVisibility(View.VISIBLE);
+                            lny_imag_trac.setVisibility(View.GONE);
                             pdp.dismiss();
 
                         } catch (JSONException e) {
-
+                            lny_imag_trac.setVisibility(View.VISIBLE);
                             Toast.makeText(getContext(), "* Error el número de identificación no cuenta con solicitudes.", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                             pdp.dismiss();
@@ -235,7 +242,10 @@ public class Fragment_tracking extends Fragment {
                             sclv_codi_envi.setVisibility(View.VISIBLE);
                             pdp.dismiss();
 
+                            lny_imag_trac.setVisibility(View.GONE);
+
                         } catch (JSONException e) {
+                            lny_imag_trac.setVisibility(View.VISIBLE);
                             Toast.makeText(getContext(), "* Error el código de envio no existe.", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                             pdp.dismiss();

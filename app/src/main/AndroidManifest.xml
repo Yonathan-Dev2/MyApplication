@@ -37,7 +37,11 @@
             android:name=".toma_foto"
             android:label="@string/title_activity_toma_foto"
             android:theme="@style/AppTheme" />
-        <activity android:name=".cuadro_mensaje"></activity>
+        <activity android:name=".cuadro_mensaje" />
+        <activity
+            android:name=".NavigationExpress"
+            android:label="@string/title_activity_navigation_express"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
     android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
     tools:context="com.express.tsuexpress.Fragmentos.Fragment_ingresar">
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -65,8 +67,8 @@
                 android:id="@+id/edt_codi_usua"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:hint="Ingrese su usuario"
                 android:inputType="textPersonName"
                 android:maxLength="15"
@@ -74,7 +76,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/til_usu_clav"
+            android:id="@+id/til_clav_usua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -85,11 +87,11 @@
             app:passwordToggleTint="#339FB0">
 
             <EditText
-                android:id="@+id/edt_usua_clav"
+                android:id="@+id/edt_clav_usua"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:hint="Ingrese su clave"
                 android:inputType="textPassword"
                 android:maxLength="12"
