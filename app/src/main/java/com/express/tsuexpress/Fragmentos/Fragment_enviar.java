@@ -320,14 +320,15 @@ public class Fragment_enviar extends Fragment {
     private boolean validarNume_iden(String nume_iden) {
         boolean toke;
 
-        if (!Patterns.PHONE.matcher(nume_iden).matches() || nume_iden.length() != 8) {
+        //Patterns.PHONE.matcher(nume_iden).matches()
 
+
+        if ( nume_iden.length()==8 || nume_iden.length() == 11)  {
+            til_nume_iden.setErrorEnabled(false);
+            toke = true;
+        } else {
             til_nume_iden.setError("Identidad inválido");
             toke = false;
-        } else {
-            til_nume_iden.setErrorEnabled(false);
-
-            toke = true;
         }
 
         return toke;
@@ -397,14 +398,16 @@ public class Fragment_enviar extends Fragment {
 
     private boolean validarIden_dest(String iden_dest) {
         boolean toke;
+        //!Patterns.PHONE.matcher(iden_dest).matches() ||
+        if (iden_dest.length() == 11 || iden_dest.length() == 8) {
 
-        if (!Patterns.PHONE.matcher(iden_dest).matches() || iden_dest.length() != 8) {
-
-            til_iden_dest.setError("Identidad inválido");
-            toke = false;
-        } else {
             til_iden_dest.setErrorEnabled(false);
             toke = true;
+
+        } else {
+            til_iden_dest.setError("Identidad inválido");
+            toke = false;
+
         }
 
         return toke;

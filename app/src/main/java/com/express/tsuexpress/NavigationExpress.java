@@ -30,6 +30,45 @@ public class NavigationExpress extends AppCompatActivity implements NavigationVi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        navigationView.getMenu().findItem(R.id.ASIG_COLA).setVisible(false);
+        navigationView.getMenu().findItem(R.id.RECE_SOLI).setVisible(false);
+        navigationView.getMenu().findItem(R.id.OPER_COLA).setVisible(false);
+        navigationView.getMenu().findItem(R.id.RECE_RECO).setVisible(false);
+
+
+
+        try {
+            Bundle extra = getIntent().getExtras();
+            String[] modulo = extra.getStringArray("modulo");
+
+            int t = modulo.length - 1;
+            while (t >= 0){
+                switch (String.valueOf(modulo[t]).trim()){
+                    case "ASIG_COLA":
+                        navigationView.getMenu().findItem(R.id.ASIG_COLA).setVisible(true);
+                        break;
+                    case "RECE_SOLI":
+                        navigationView.getMenu().findItem(R.id.RECE_SOLI).setVisible(true);
+                        break;
+                    case "OPER_COLA":
+                        navigationView.getMenu().findItem(R.id.OPER_COLA).setVisible(true);
+                        break;
+                    case "RECE_RECO":
+                        navigationView.getMenu().findItem(R.id.RECE_RECO).setVisible(true);
+                        break;
+                }
+                t--;
+            }
+        }
+        catch (Exception e){
+            /*Intent mainIntent = new Intent(getApplicationContext(), Fragment_ingresar.class);
+            mainIntent.putExtra("cerrar", "1");
+            startActivity(mainIntent);
+            finish(); */
+        }
+
+
     }
 
     @Override
@@ -82,7 +121,9 @@ public class NavigationExpress extends AppCompatActivity implements NavigationVi
 
         if (id == R.id.ASIG_COLA) {
 
-        } else if (id == R.id.RECE_ENVI) {
+        } else if (id == R.id.RECE_SOLI ) {
+
+        } else if (id == R.id.RECE_RECO ) {
 
         } else if (id == R.id.OPER_COLA) {
 

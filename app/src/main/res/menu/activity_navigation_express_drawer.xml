@@ -8,9 +8,15 @@
                 android:icon="@drawable/asignar"
                 android:title="Asignar" />
             <item
-                android:id="@+id/RECE_ENVI"
+                android:id="@+id/RECE_SOLI"
+                android:icon="@drawable/solicitud"
+                android:title="Recepción de solicitud" />
+
+            <item
+                android:id="@+id/RECE_RECO"
                 android:icon="@drawable/recepcionar"
-                android:title="Recepcionar" />
+                android:title="Recepción de recojo" />
+
         </menu>
     </item>
 

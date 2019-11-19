@@ -84,7 +84,7 @@
             android:background="@drawable/borde_logi"
             android:textColorHint="@android:color/background_dark"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="#339FB0">
+            app:passwordToggleTint="@color/colorPrimary">
 
             <EditText
                 android:id="@+id/edt_clav_usua"
@@ -95,8 +95,8 @@
                 android:hint="Ingrese su clave"
                 android:inputType="textPassword"
                 android:maxLength="12"
-                android:textColorHighlight="#339FB0"
-                android:textColorHint="#339FB0" />
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
@@ -115,7 +115,7 @@
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:text="Recordar usuario"
-            android:textColor="#000000"
+            android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
 

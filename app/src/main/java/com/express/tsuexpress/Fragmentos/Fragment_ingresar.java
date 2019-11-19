@@ -52,11 +52,12 @@ public class Fragment_ingresar extends Fragment {
     Button btn_inic_sesi;
     CheckBox chb_reco_usua;
     TextInputLayout til_codi_usua, til_clav_usua;
-    String iden_usua,nomb_usua, apel_usua;
+    String iden_usua,nomb_usua, apel_usua, esta_usua;
 
     private SharedPreferences preferences;
 
     ProgressDialog pdp = null;
+    String[] modulo;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -82,9 +83,7 @@ public class Fragment_ingresar extends Fragment {
             public void onClick(View v) {
                 if (validarCodi_usua(edt_codi_usua.getText().toString()) && validarUsua_clav(edt_clav_usua.getText().toString())){
                     ingr_navi();
-                    //Toast.makeText(getContext(), "Ingresar", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
@@ -104,18 +103,33 @@ public class Fragment_ingresar extends Fragment {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        JSONArray json = response.optJSONArray("esta_usua");
 
                         try {
-                            JSONObject jsonObject =  json.getJSONObject(0);
-                            String esta_usua = jsonObject.getString("esta_usua");
-                                   iden_usua = jsonObject.getString("iden_usua");
-                                   nomb_usua = jsonObject.getString("nomb_usua");
-                                   apel_usua = jsonObject.getString("apel_usua");
+
+                            JSONArray json = response.optJSONArray("modulo");
+                            int i = json.length();
+
+                            modulo = new String[i];
+
+                            do {
+
+                                JSONObject jsonObject =  json.getJSONObject(i-1);
+
+                                esta_usua = jsonObject.getString("esta_usua");
+                                iden_usua = jsonObject.getString("iden_usua");
+                                nomb_usua = jsonObject.getString("nomb_usua");
+                                apel_usua = jsonObject.getString("apel_usua");
+
+                                modulo[i-1] = String.valueOf(jsonObject.getString("codi_prog"));
+
+                                i--;
+                            } while (i>0);
+
 
                             if (esta_usua.equalsIgnoreCase("ACT")){
 
                                 Intent t = new Intent(getContext(), NavigationExpress.class);
+                                t.putExtra("modulo", modulo);
                                 startActivity(t);
 
                                 if (chb_reco_usua.isChecked()){
@@ -127,7 +141,11 @@ public class Fragment_ingresar extends Fragment {
                             } else {
                                 Toast.makeText(getContext(), "*Error el estado del usuario es inactivo.", Toast.LENGTH_SHORT).show();
                             }
+
                             pdp.dismiss();
+
+
+
 
                         } catch (JSONException e) {
                             Toast.makeText(getContext(), "*Error el usuario o clave es incorrecto.", Toast.LENGTH_SHORT).show();
@@ -144,6 +162,7 @@ public class Fragment_ingresar extends Fragment {
                         pdp.dismiss();
                     }
                 });
+
         request.add(jsonObjectRequest);
 
         pdp = new ProgressDialog(getContext());
@@ -201,9 +220,6 @@ public class Fragment_ingresar extends Fragment {
 
         return toke;
     }
-
-
-
 
 
     private void guardarpreferencia() {

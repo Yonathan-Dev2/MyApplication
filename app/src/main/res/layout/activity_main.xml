@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="#339FB0"
+        android:background="@color/colorPrimary"
         app:itemIconTint="#000000"
         app:menu="@menu/menu_navigation">
 

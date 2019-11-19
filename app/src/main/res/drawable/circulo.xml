@@ -4,7 +4,7 @@
         <shape
             android:shape="ring"
             android:useLevel="false">
-            <solid android:color="#339FB0" />
+            <solid android:color="@color/colorPrimary" />
         </shape>
     </item>
     <item android:id="@android:id/progress">

@@ -16,7 +16,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="COMPROBANTE"
-        android:textColor="#339FB0"
+        android:textColor="@color/colorPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
         android:background="@drawable/relleno_buton"
         android:onClick="onclick"
         android:text="Capturar Fotografía"
-        android:textColor="#339FB0"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
     <Button
@@ -71,7 +71,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/relleno_buton"
         android:text="confirmar envio"
-        android:textColor="#339FB0"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
     <Button
@@ -83,7 +83,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/relleno_buton"
         android:text="SALIR"
-        android:textColor="#339FB0"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold" />
 
 </LinearLayout>
