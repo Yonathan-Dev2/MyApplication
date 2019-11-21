@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context="com.express.tsuexpress.Fragmentos.Fragment_inic_home">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:layout_width="224dp"
+        android:layout_height="252dp"
+        android:layout_gravity="center"
+        app:srcCompat="@mipmap/ic_launcher" />
+</FrameLayout>

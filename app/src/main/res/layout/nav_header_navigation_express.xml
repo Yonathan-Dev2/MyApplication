@@ -14,9 +14,9 @@
     android:weightSum="1">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="75dp"
         android:layout_height="131dp"
+        android:layout_marginRight="10dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@mipmap/ic_launcher" />
 
@@ -28,22 +28,24 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/txt_nomb_usua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="yonathan wilfredo"
+            android:text="Nombres"
             android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/background_dark" />
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/txt_apel_usua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="galindo galindo"
+            android:text="Apellidos"
             android:textAllCaps="true"
-            android:textColor="@android:color/background_dark" />
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
