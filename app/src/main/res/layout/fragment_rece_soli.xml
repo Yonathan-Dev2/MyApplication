@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,9 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/borde_sear"
         android:orientation="horizontal">
 
         <TextView
@@ -20,17 +22,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Recepcionar solicitar"
+            android:text="Codigo de envio"
+            android:textAlignment="viewStart"
             android:textAllCaps="true"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spn_codi_envi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:spinnerMode="dialog" />
     </LinearLayout>
@@ -56,10 +62,95 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
+                    android:id="@+id/txt_nomb_clie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombres y apellidos" />
+                    android:hint="Remitente" />
             </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/borde_edit">
+
+                    <EditText
+                        android:id="@+id/txt_acti_hora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Fecha y hora" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/borde_edit">
+
+                    <EditText
+                        android:id="@+id/txt_celu_clie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Celular" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/borde_edit">
+
+                    <EditText
+                        android:id="@+id/txt_tipo_envi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Tipo" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/borde_edit">
+
+                    <EditText
+                        android:id="@+id/txt_form_pago"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Pago" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:srcCompat="@drawable/seguimiento" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -70,63 +161,7 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Fecha y hora" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/borde_edit">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Celular" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/borde_edit">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Tipo" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/borde_edit">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Pago" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/borde_edit">
-
-                <EditText
+                    android:id="@+id/txt_nomb_dest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Destinatario" />
@@ -142,6 +177,7 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
+                    android:id="@+id/txt__dire_clie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Dirección de recojo" />
@@ -156,10 +192,40 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/txt_refe_clie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Referencia" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/borde_edit">
+
+                <EditText
+                    android:id="@+id/txt_dire_clie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Dirección de envio" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/borde_edit">
+
+                <EditText
+                    android:id="@+id/txt_refe_dest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Referencia" />
             </android.support.design.widget.TextInputLayout>
 
             <LinearLayout
@@ -176,6 +242,7 @@
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/relleno_buton"
                     android:text="ACEPTAR"
@@ -187,6 +254,7 @@
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/relleno_buton"
                     android:text="RECHAZAR"
