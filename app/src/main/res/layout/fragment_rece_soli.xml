@@ -62,7 +62,7 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/txt_nomb_clie"
+                    android:id="@+id/edt_nomb_clie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Remitente" />
@@ -82,7 +82,7 @@
                     android:background="@drawable/borde_edit">
 
                     <EditText
-                        android:id="@+id/txt_acti_hora"
+                        android:id="@+id/edt_acti_hora"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Fecha y hora" />
@@ -97,7 +97,7 @@
                     android:background="@drawable/borde_edit">
 
                     <EditText
-                        android:id="@+id/txt_celu_clie"
+                        android:id="@+id/edt_celu_clie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Celular" />
@@ -119,7 +119,7 @@
                     android:background="@drawable/borde_edit">
 
                     <EditText
-                        android:id="@+id/txt_tipo_envi"
+                        android:id="@+id/edt_tipo_envi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Tipo" />
@@ -134,7 +134,7 @@
                     android:background="@drawable/borde_edit">
 
                     <EditText
-                        android:id="@+id/txt_form_pago"
+                        android:id="@+id/edt_form_pago"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Pago" />
@@ -144,9 +144,10 @@
             </LinearLayout>
 
             <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:id="@+id/img_ruta_comp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
@@ -161,7 +162,7 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/txt_nomb_dest"
+                    android:id="@+id/edt_nomb_dest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Destinatario" />
@@ -177,7 +178,7 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/txt__dire_clie"
+                    android:id="@+id/edt_dire_clie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Dirección de recojo" />
@@ -192,7 +193,7 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/txt_refe_clie"
+                    android:id="@+id/edt_refe_clie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Referencia" />
@@ -207,7 +208,7 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/txt_dire_clie"
+                    android:id="@+id/edt_dire_dest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Dirección de envio" />
@@ -222,7 +223,7 @@
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/txt_refe_dest"
+                    android:id="@+id/edt_refe_dest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Referencia" />
@@ -239,7 +240,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btn_acep_soli"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -251,7 +252,7 @@
                     tools:ignore="ButtonStyle" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btn_rech_soli"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
