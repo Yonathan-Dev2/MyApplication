@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.express.tsuexpress.Fragmentos.Fragment_asig_cola;
 import com.express.tsuexpress.Fragmentos.Fragment_inic_home;
 import com.express.tsuexpress.Fragmentos.Fragment_rece_soli;
 
@@ -148,7 +149,7 @@ public class NavigationExpress extends AppCompatActivity implements NavigationVi
         if (id == R.id.INIC_HOME) {
             CargarFragmento(new Fragment_inic_home());
         } else if (id == R.id.ASIG_COLA) {
-
+            CargarFragmento(new Fragment_asig_cola());
         } else if (id == R.id.RECE_SOLI ) {
 
             CargarFragmento(new Fragment_rece_soli());

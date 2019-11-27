@@ -295,8 +295,7 @@ public class Fragment_rece_soli extends Fragment {
                         JSONArray json = response.optJSONArray("mensaje");
                         String estado = ""+json.toString().replace("[","").replace("]","").replace("'","");
 
-                        //Toast.makeText(getContext(),response.toString(), Toast.LENGTH_SHORT).show();
-                        pdp.dismiss();
+                                           pdp.dismiss();
                         carg_codi_envi();
                         limpiar_datos();
                         Toast.makeText(getContext(),"La solicitud fue "+estado, Toast.LENGTH_SHORT).show();
@@ -318,12 +317,10 @@ public class Fragment_rece_soli extends Fragment {
         pdp.setCancelable(false);
         pdp.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-
     }
 
 
     private void limpiar_datos(){
-
         edt_nomb_clie.setText("");
         edt_acti_hora.setText("");
         edt_celu_clie.setText("");
@@ -336,6 +333,5 @@ public class Fragment_rece_soli extends Fragment {
         edt_refe_dest.setText("");
         img_ruta_comp.setVisibility(View.GONE);
     }
-
 
 }
