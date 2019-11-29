@@ -66,6 +66,19 @@
             android:background="@drawable/borde_edit">
 
             <EditText
+                android:id="@+id/edt_tipo_envi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tipo" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/borde_edit">
+
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombres y apellidos" />

@@ -44,7 +44,7 @@ public class Fragment_tracking extends Fragment {
     JsonObjectRequest jsonObjectRequest;
 
     SearchView sv_trac;
-    TextView txt_tipo_envi, txt_acti_hora_envi, txt_esta_soli, txt_acti_soli;
+    TextView txt_tipo_envi, txt_acti_hora_envi, txt_esta_soli, txt_acti_soli, txt_codi_usua_reco, txt_acti_reco;
     ScrollView sclv_codi_envi, sclv_nume_iden;
     RadioButton rdb_codi_envi, rdb_nume_iden;
     LinearLayout lny_imag_trac;
@@ -72,6 +72,8 @@ public class Fragment_tracking extends Fragment {
         txt_acti_hora_envi  = (TextView)     vista.findViewById(R.id.txt_acti_hora_envi);
         txt_esta_soli       = (TextView)     vista.findViewById(R.id.txt_esta_soli);
         txt_acti_soli       = (TextView)     vista.findViewById(R.id.txt_acti_soli);
+        txt_codi_usua_reco  = (TextView)     vista.findViewById(R.id.txt_codi_usua_reco);
+        txt_acti_reco       = (TextView)     vista.findViewById(R.id.txt_acti_reco);
         sclv_codi_envi      = (ScrollView)   vista.findViewById(R.id.sclv_codi_envi);
         sclv_nume_iden      = (ScrollView)   vista.findViewById(R.id.sclv_nume_iden);
         rv_soli_envi        = (RecyclerView) vista.findViewById(R.id.rv_soli_envi);
@@ -239,6 +241,8 @@ public class Fragment_tracking extends Fragment {
                             String acti_hora = jsonObject.getString("acti_hora");
                             String esta_soli = jsonObject.getString("esta_soli");
                             String acti_soli = jsonObject.getString("acti_soli");
+                            String codi_usua_reco = jsonObject.getString("codi_usua_reco");
+                            String acti_reco = jsonObject.getString("acti_reco");
 
 
                             txt_tipo_envi.setText(tipo_envi);
@@ -254,6 +258,18 @@ public class Fragment_tracking extends Fragment {
                                 txt_acti_soli.setText(acti_soli);
                             } else {
                                 txt_acti_soli.setText("-");
+                            }
+
+                            if (!codi_usua_reco.equalsIgnoreCase("null")){
+                                txt_codi_usua_reco.setText(codi_usua_reco);
+                            } else{
+                                txt_codi_usua_reco.setText("-");
+                            }
+
+                            if (!acti_reco.equalsIgnoreCase("null")){
+                                txt_acti_reco.setText(acti_reco);
+                            } else {
+                                txt_acti_reco.setText("-");
                             }
 
 

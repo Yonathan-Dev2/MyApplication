@@ -246,13 +246,27 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_codi_usua_reco"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="-"
                         android:textAlignment="center"
+                        android:textAllCaps="true"
                         android:textColor="@android:color/background_dark"
-                        android:textSize="17sp" />
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_acti_reco"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>

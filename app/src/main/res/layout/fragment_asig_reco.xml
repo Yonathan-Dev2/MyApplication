@@ -50,6 +50,7 @@
             android:orientation="horizontal">
 
             <Spinner
+                android:id="@+id/spn_codi_envi"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -64,8 +65,24 @@
             android:background="@drawable/borde_edit">
 
             <EditText
+                android:id="@+id/edt_tipo_envi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:hint="Tipo" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/borde_edit">
+
+            <EditText
+                android:id="@+id/edt_nomb_clie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:hint="Nombres y apellidos" />
         </android.support.design.widget.TextInputLayout>
 
@@ -76,8 +93,10 @@
             android:background="@drawable/borde_edit">
 
             <EditText
+                android:id="@+id/edt_dire_clie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:hint="Dirección" />
         </android.support.design.widget.TextInputLayout>
 
@@ -99,12 +118,14 @@
             android:orientation="horizontal">
 
             <Spinner
+                android:id="@+id/spn_cola"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1" />
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_asig_reco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/relleno_buton"
