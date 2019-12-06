@@ -295,7 +295,7 @@ public class Fragment_rece_soli extends Fragment {
                         JSONArray json = response.optJSONArray("mensaje");
                         String estado = ""+json.toString().replace("[","").replace("]","").replace("'","");
 
-                                           pdp.dismiss();
+                        pdp.dismiss();
                         carg_codi_envi();
                         limpiar_datos();
                         Toast.makeText(getContext(),"La solicitud fue "+estado, Toast.LENGTH_SHORT).show();

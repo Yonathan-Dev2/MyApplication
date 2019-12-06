@@ -44,7 +44,7 @@ public class Fragment_tracking extends Fragment {
     JsonObjectRequest jsonObjectRequest;
 
     SearchView sv_trac;
-    TextView txt_tipo_envi, txt_acti_hora_envi, txt_esta_soli, txt_acti_soli, txt_codi_usua_reco, txt_acti_reco;
+    TextView txt_tipo_envi, txt_acti_hora_envi, txt_esta_soli, txt_acti_soli, txt_codi_usua_reco, txt_acti_reco, txt_acti_oper_reco, txt_codi_usua_entr, txt_acti_entr, txt_acti_oper_entr;
     ScrollView sclv_codi_envi, sclv_nume_iden;
     RadioButton rdb_codi_envi, rdb_nume_iden;
     LinearLayout lny_imag_trac;
@@ -74,12 +74,17 @@ public class Fragment_tracking extends Fragment {
         txt_acti_soli       = (TextView)     vista.findViewById(R.id.txt_acti_soli);
         txt_codi_usua_reco  = (TextView)     vista.findViewById(R.id.txt_codi_usua_reco);
         txt_acti_reco       = (TextView)     vista.findViewById(R.id.txt_acti_reco);
+        txt_acti_oper_reco  = (TextView)     vista.findViewById(R.id.txt_acti_oper_reco);
         sclv_codi_envi      = (ScrollView)   vista.findViewById(R.id.sclv_codi_envi);
         sclv_nume_iden      = (ScrollView)   vista.findViewById(R.id.sclv_nume_iden);
         rv_soli_envi        = (RecyclerView) vista.findViewById(R.id.rv_soli_envi);
         rdb_codi_envi       = (RadioButton)  vista.findViewById(R.id.rdb_codi_envi);
         rdb_nume_iden       = (RadioButton)  vista.findViewById(R.id.rdb_nume_iden);
         lny_imag_trac       = (LinearLayout) vista.findViewById(R.id.lny_imag_trac);
+        txt_codi_usua_entr  = (TextView) vista.findViewById(R.id.txt_codi_usua_entr);
+        txt_acti_entr       = (TextView) vista.findViewById(R.id.txt_acti_entr);
+        txt_acti_oper_entr  = (TextView) vista.findViewById(R.id.txt_acti_oper_entr);
+
 
         rv_soli_envi.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false));
 
@@ -243,7 +248,10 @@ public class Fragment_tracking extends Fragment {
                             String acti_soli = jsonObject.getString("acti_soli");
                             String codi_usua_reco = jsonObject.getString("codi_usua_reco");
                             String acti_reco = jsonObject.getString("acti_reco");
-
+                            String acti_oper_reco = jsonObject.getString("acti_oper_reco");
+                            String codi_usua_entr = jsonObject.getString("codi_usua_entr");
+                            String acti_entr = jsonObject.getString("acti_entr");
+                            String acti_oper_entr = jsonObject.getString("acti_oper_entr");
 
                             txt_tipo_envi.setText(tipo_envi);
                             txt_acti_hora_envi.setText(acti_hora);
@@ -270,6 +278,30 @@ public class Fragment_tracking extends Fragment {
                                 txt_acti_reco.setText(acti_reco);
                             } else {
                                 txt_acti_reco.setText("-");
+                            }
+
+                            if (!acti_oper_reco.equalsIgnoreCase("null")){
+                                txt_acti_oper_reco.setText(acti_oper_reco);
+                            } else {
+                                txt_acti_oper_reco.setText("-");
+                            }
+
+                            if (!codi_usua_entr.equalsIgnoreCase("null")){
+                                txt_codi_usua_entr.setText(codi_usua_entr);
+                            } else {
+                                txt_codi_usua_entr.setText("-");
+                            }
+
+                            if (!acti_entr.equalsIgnoreCase("null")){
+                                txt_acti_entr.setText(acti_entr);
+                            } else {
+                                txt_acti_entr.setText("-");
+                            }
+
+                            if (!acti_oper_entr.equalsIgnoreCase("null")){
+                                txt_acti_oper_entr.setText(acti_oper_entr);
+                            } else {
+                                txt_acti_oper_entr.setText("-");
                             }
 
 

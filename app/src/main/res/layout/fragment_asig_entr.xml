@@ -52,6 +52,7 @@
             android:orientation="horizontal">
 
             <Spinner
+                android:id="@+id/spn_codi_envi"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -69,7 +70,9 @@
                 android:id="@+id/edt_tipo_envi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tipo" />
+                android:hint="Tipo"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -79,9 +82,12 @@
             android:background="@drawable/borde_edit">
 
             <EditText
+                android:id="@+id/edt_nomb_clie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombres y apellidos" />
+                android:hint="Nombres y apellidos"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -91,9 +97,12 @@
             android:background="@drawable/borde_edit">
 
             <EditText
+                android:id="@+id/edt_dire_clie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Dirección" />
+                android:hint="Dirección"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
         </android.support.design.widget.TextInputLayout>
 
         <TextView
@@ -114,12 +123,14 @@
             android:orientation="horizontal">
 
             <Spinner
+                android:id="@+id/spn_cola"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1" />
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_asig_entr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/relleno_buton"
