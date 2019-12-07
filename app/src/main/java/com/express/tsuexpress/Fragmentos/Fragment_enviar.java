@@ -20,6 +20,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -35,6 +36,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.regex.Pattern;
+
+import static com.express.tsuexpress.Constants.MY_DEFAULT_TIMEOUT;
 
 
 public class Fragment_enviar extends Fragment {
@@ -273,6 +276,12 @@ public class Fragment_enviar extends Fragment {
                         pdp.dismiss();
                     }
                 });
+
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MY_DEFAULT_TIMEOUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         request.add(jsonObjectRequest);
 
 
@@ -391,8 +400,6 @@ public class Fragment_enviar extends Fragment {
 
         return toke;
     }
-
-
 
 
 

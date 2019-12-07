@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -29,6 +30,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import static com.express.tsuexpress.Constants.MY_DEFAULT_TIMEOUT;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -145,6 +148,11 @@ public class Fragment_asig_reco extends Fragment {
                     }
                 });
 
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MY_DEFAULT_TIMEOUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         request.add(jsonObjectRequest);
 
         pdp = new ProgressDialog(getContext());
@@ -192,6 +200,11 @@ public class Fragment_asig_reco extends Fragment {
                         pdp.dismiss();
                     }
                 });
+
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MY_DEFAULT_TIMEOUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         request.add(jsonObjectRequest);
 
@@ -246,6 +259,11 @@ public class Fragment_asig_reco extends Fragment {
                     }
                 });
 
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MY_DEFAULT_TIMEOUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         request.add(jsonObjectRequest);
     }
 
@@ -287,6 +305,11 @@ public class Fragment_asig_reco extends Fragment {
                         pdp.dismiss();
                     }
                 });
+
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MY_DEFAULT_TIMEOUT,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         request.add(jsonObjectRequest);
 

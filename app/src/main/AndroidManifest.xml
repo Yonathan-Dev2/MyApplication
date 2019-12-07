@@ -40,7 +40,7 @@
         <activity android:name=".cuadro_mensaje" />
         <activity
             android:name=".NavigationExpress"
-            android:label="@string/title_activity_navigation_express"
+            android:label="Tsu Express"
             android:theme="@style/AppTheme" />
     </application>
 

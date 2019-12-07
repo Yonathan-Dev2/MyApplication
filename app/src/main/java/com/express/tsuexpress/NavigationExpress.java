@@ -13,7 +13,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -119,12 +118,15 @@ public class NavigationExpress extends AppCompatActivity implements NavigationVi
         dialogo1.show();
     }
 
+
+    /* Menu de opciones
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation_express, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -139,7 +141,7 @@ public class NavigationExpress extends AppCompatActivity implements NavigationVi
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    } */
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
