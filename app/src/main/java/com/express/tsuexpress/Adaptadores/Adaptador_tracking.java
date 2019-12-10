@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.express.tsuexpress.R;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 public class Adaptador_tracking extends RecyclerView.Adapter<Adaptador_tracking.ViewHolderDatos>{
 
+    ImageView img_tipo_envi_trac;
 
     ArrayList<String> ListEnvio;
     ArrayList<String> ListTipo;
@@ -37,6 +39,8 @@ public class Adaptador_tracking extends RecyclerView.Adapter<Adaptador_tracking.
     public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_list_envi,null,false);
+
+
 
         return new ViewHolderDatos(view);
     }
@@ -69,15 +73,22 @@ public class Adaptador_tracking extends RecyclerView.Adapter<Adaptador_tracking.
             list_tipo_envi = (TextView) itemView.findViewById(R.id.list_tipo_envi);
             list_acti_fech = (TextView) itemView.findViewById(R.id.list_acti_fech);
             list_acti_time = (TextView) itemView.findViewById(R.id.list_acti_time);
+            img_tipo_envi_trac = (ImageView) itemView.findViewById(R.id.img_tipo_envi_trac);
 
         }
 
         public void asignardatos_codienvio(String datos) {
             list_codi_envi.setText(datos);
+
         }
 
         public void asignardatos_tipoenvio(String datos) {
             list_tipo_envi.setText(datos);
+            /*if (datos.equalsIgnoreCase("SOBRE")){
+                img_tipo_envi_trac.setImageResource(R.drawable.sobre);
+            } else{
+                img_tipo_envi_trac.setImageResource(R.drawable.paquete);
+            }*/
         }
 
         public void asignardatos_fecha(String datos) {

@@ -182,8 +182,8 @@ public class Fragmen_asig_entr extends Fragment {
                         try {
                             JSONObject jsonObject =  json.getJSONObject(0);
 
-                            String nomb_clie = jsonObject.getString("nomb_clie");
-                            String dire_clie = jsonObject.getString("dire_clie");
+                            String nomb_clie = jsonObject.getString("nomb_dest");
+                            String dire_clie = jsonObject.getString("dire_dest");
                             String tipo_envi = jsonObject.getString("tipo_envi");
 
                             edt_nomb_clie.setText(nomb_clie);

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.express.tsuexpress.Fragmentos.Fragment_asig_cola;
 import com.express.tsuexpress.Fragmentos.Fragment_inic_home;
 import com.express.tsuexpress.Fragmentos.Fragment_oper_cola;
+import com.express.tsuexpress.Fragmentos.Fragment_rece_reco;
 import com.express.tsuexpress.Fragmentos.Fragment_rece_soli;
 
 public class NavigationExpress extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -156,8 +157,7 @@ public class NavigationExpress extends AppCompatActivity implements NavigationVi
         } else if (id == R.id.RECE_SOLI ) {
             CargarFragmento(new Fragment_rece_soli());
         } else if (id == R.id.RECE_RECO ) {
-
-
+            CargarFragmento(new Fragment_rece_reco());
         } else if (id == R.id.OPER_COLA) {
             CargarFragmento(new Fragment_oper_cola());
         } else if (id == R.id.CERR_SESI) {

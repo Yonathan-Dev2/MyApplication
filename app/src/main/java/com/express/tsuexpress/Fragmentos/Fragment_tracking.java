@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
@@ -51,6 +52,7 @@ public class Fragment_tracking extends Fragment {
     ScrollView sclv_codi_envi, sclv_nume_iden;
     RadioButton rdb_codi_envi, rdb_nume_iden;
     LinearLayout lny_imag_trac;
+    ImageView img_tipo_soli;
 
     RecyclerView rv_soli_envi;
     ArrayList<String> ListEnvio;
@@ -87,6 +89,8 @@ public class Fragment_tracking extends Fragment {
         txt_codi_usua_entr  = (TextView) vista.findViewById(R.id.txt_codi_usua_entr);
         txt_acti_entr       = (TextView) vista.findViewById(R.id.txt_acti_entr);
         txt_acti_oper_entr  = (TextView) vista.findViewById(R.id.txt_acti_oper_entr);
+        img_tipo_soli       = (ImageView) vista.findViewById(R.id.img_tipo_soli);
+
 
 
         rv_soli_envi.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false));
@@ -165,7 +169,6 @@ public class Fragment_tracking extends Fragment {
     }
 
     private void trac_iden(String nume_iden) {
-
 
         String url = "https://www.tsuexpress.com/movil/listaenvios.php?nume_iden="+nume_iden;
 
@@ -264,6 +267,10 @@ public class Fragment_tracking extends Fragment {
                             String acti_oper_entr = jsonObject.getString("acti_oper_entr");
 
                             txt_tipo_envi.setText(tipo_envi);
+                            /*if (tipo_envi.equalsIgnoreCase("SOBRE")){
+                                img_tipo_soli.setImageResource(R.drawable.sobre);
+                            }*/
+
                             txt_acti_hora_envi.setText(acti_hora);
 
                             if (!esta_soli.equalsIgnoreCase("null")){

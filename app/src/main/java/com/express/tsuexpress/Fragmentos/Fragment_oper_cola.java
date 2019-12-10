@@ -132,6 +132,11 @@ public class Fragment_oper_cola extends Fragment {
                             String esta_oper_entr = jsonObject.getString("esta_oper_entr").trim();
                             String esta_entr      = jsonObject.getString("esta_entr").trim();
 
+                            String nomb_dest      = jsonObject.getString("nomb_dest").trim();
+                            String dire_dest      = jsonObject.getString("dire_dest").trim();
+                            String refe_dest      = jsonObject.getString("refe_dest").trim();
+                            String celu_dest      = jsonObject.getString("celu_dest").trim();
+
 
 
 
@@ -152,10 +157,12 @@ public class Fragment_oper_cola extends Fragment {
                             } else if (esta_entr.equalsIgnoreCase("SI")){
                                 btn_reco_envi.setVisibility(View.GONE);
                                 btn_entr_envi.setVisibility(View.VISIBLE);
-                                edt_nomb_clie.setText(nomb_clie);
-                                edt_dire_clie.setText(dire_clie);
-                                edt_refe_clie.setText(refe_clie);
-                                edt_celu_clie.setText(celu_clie);
+
+                                edt_nomb_clie.setText(nomb_dest);
+                                edt_dire_clie.setText(dire_dest);
+                                edt_refe_clie.setText(refe_dest);
+                                edt_celu_clie.setText(celu_dest);
+
                                 edt_tipo_envi.setText(tipo_envi);
                                 edt_form_pago.setText(form_pago);
                             }

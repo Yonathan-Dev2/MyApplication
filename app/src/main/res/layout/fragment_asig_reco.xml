@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_light"
     android:orientation="vertical"
     tools:context="com.express.tsuexpress.Fragmentos.Fragment_asig_reco">
 
@@ -30,6 +31,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
+        android:background="@android:color/background_light"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -69,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Tipo"
-                android:textStyle="bold" />
+                android:textColor="@android:color/background_dark" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -83,8 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombres y apellidos"
-                android:textColor="#000000"
-                android:textStyle="bold" />
+                android:textColor="@android:color/background_dark" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -98,8 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Dirección"
-                android:textColor="#000000"
-                android:textStyle="bold" />
+                android:textColor="@android:color/background_dark" />
         </android.support.design.widget.TextInputLayout>
 
         <TextView

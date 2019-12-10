@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:background="@android:color/background_light"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
+    android:orientation="vertical"
     tools:context="com.express.tsuexpress.Fragmentos.Fragment_enviar">
 
     <TextView
@@ -32,7 +33,8 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -219,10 +221,9 @@
                         android:id="@+id/txt_tota_paga"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1"
                         android:textColor="@android:color/background_dark"
                         android:textSize="16sp"
                         android:textStyle="bold" />
