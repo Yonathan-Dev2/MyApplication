@@ -2,6 +2,7 @@ package com.express.tsuexpress.Adaptadores;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.express.tsuexpress.R;
-
 
 import java.util.ArrayList;
 
@@ -84,6 +84,7 @@ public class Adaptador_tracking extends RecyclerView.Adapter<Adaptador_tracking.
 
         public void asignardatos_tipoenvio(String datos) {
             list_tipo_envi.setText(datos);
+            Log.i("datos", ""+datos);
             /*if (datos.equalsIgnoreCase("SOBRE")){
                 img_tipo_envi_trac.setImageResource(R.drawable.sobre);
             } else{

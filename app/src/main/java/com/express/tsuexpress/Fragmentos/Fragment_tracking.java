@@ -267,9 +267,11 @@ public class Fragment_tracking extends Fragment {
                             String acti_oper_entr = jsonObject.getString("acti_oper_entr");
 
                             txt_tipo_envi.setText(tipo_envi);
-                            /*if (tipo_envi.equalsIgnoreCase("SOBRE")){
+                            if (tipo_envi.equalsIgnoreCase("SOBRE")){
                                 img_tipo_soli.setImageResource(R.drawable.sobre);
-                            }*/
+                            }else{
+                                img_tipo_soli.setImageResource(R.drawable.paquete);
+                            }
 
                             txt_acti_hora_envi.setText(acti_hora);
 
