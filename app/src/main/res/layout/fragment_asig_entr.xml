@@ -128,6 +128,14 @@
                 android:layout_weight="1" />
         </LinearLayout>
 
+        <CheckBox
+            android:id="@+id/chk_canc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:text="CANCELADO" />
+
         <Button
             android:id="@+id/btn_asig_entr"
             android:layout_width="match_parent"

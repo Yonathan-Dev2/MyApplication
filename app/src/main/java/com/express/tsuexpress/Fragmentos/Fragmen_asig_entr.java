@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -48,6 +49,7 @@ public class Fragmen_asig_entr extends Fragment {
     EditText edt_nomb_clie, edt_dire_clie, edt_tipo_envi;
     String  codi_envi = "", codi_usua;
     Button btn_asig_entr;
+    CheckBox chk_canc;
 
     ProgressDialog pdp = null;
 
@@ -64,10 +66,12 @@ public class Fragmen_asig_entr extends Fragment {
         edt_dire_clie = (EditText) vista.findViewById(R.id.edt_dire_clie);
         edt_tipo_envi = (EditText) vista.findViewById(R.id.edt_tipo_envi);
         btn_asig_entr = (Button)   vista.findViewById(R.id.btn_asig_entr);
+        chk_canc      = (CheckBox) vista.findViewById(R.id.chk_canc);
 
         edt_nomb_clie.setEnabled(false);
         edt_dire_clie.setEnabled(false);
         edt_tipo_envi.setEnabled(false);
+        //chk_canc.setEnabled(false);
 
         spn_codi_envi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -94,8 +98,13 @@ public class Fragmen_asig_entr extends Fragment {
                 String codi_envi = spn_codi_envi.getSelectedItem().toString();
                 String codi_usua = spn_cola.getSelectedItem().toString();
                 String tipo_asig = "ENTREGA";
+
+                String envi_canc= "";
+                if (chk_canc.isChecked())
+                    envi_canc = "SI";
+
                 if (!codi_envi.equalsIgnoreCase("Seleccione") && !codi_usua.equalsIgnoreCase("Seleccione")){
-                    asig_entr(codi_envi, tipo_asig, codi_usua);
+                    asig_entr(codi_envi, tipo_asig, codi_usua, envi_canc);
                 } else {
                     Toast.makeText(getContext(),"*Error debe selecciona el codigo de envio y el nombre del colaborador.", Toast.LENGTH_SHORT).show();
                 }
@@ -185,10 +194,15 @@ public class Fragmen_asig_entr extends Fragment {
                             String nomb_clie = jsonObject.getString("nomb_dest");
                             String dire_clie = jsonObject.getString("dire_dest");
                             String tipo_envi = jsonObject.getString("tipo_envi");
+                            String envi_canc = jsonObject.getString("envi_canc");
 
                             edt_nomb_clie.setText(nomb_clie);
                             edt_dire_clie.setText(dire_clie);
                             edt_tipo_envi.setText(tipo_envi);
+
+                            if (envi_canc.equalsIgnoreCase("SI"))
+                                chk_canc.setChecked(true);
+
                             pdp.dismiss();
 
 
@@ -273,9 +287,9 @@ public class Fragmen_asig_entr extends Fragment {
     }
 
 
-    private void asig_entr(String codi_envi, String tipo_asig, String codi_usua) {
+    private void asig_entr(String codi_envi, String tipo_asig, String codi_usua, String envi_canc) {
 
-        String url = "https://www.tsuexpress.com/movil/asignarentrega.php?codi_envi="+codi_envi+"&tipo_asig="+tipo_asig+"&codi_usua="+codi_usua;
+        String url = "https://www.tsuexpress.com/movil/asignarentrega.php?codi_envi="+codi_envi+"&tipo_asig="+tipo_asig+"&codi_usua="+codi_usua+"&envi_canc="+envi_canc;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -326,6 +340,7 @@ public class Fragmen_asig_entr extends Fragment {
         edt_dire_clie.setText("");
         edt_tipo_envi.setText("");
         spn_cola.setSelection(0);
+        chk_canc.setChecked(false);
     }
 
 }

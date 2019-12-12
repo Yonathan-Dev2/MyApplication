@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class Fragment_oper_cola extends Fragment {
     SearchView sv_codi_envi;
     EditText edt_nomb_clie, edt_dire_clie, edt_refe_clie, edt_celu_clie, edt_tipo_envi, edt_form_pago;
     ProgressDialog pdp = null;
+    CheckBox chk_canc;
     private String codi_envi_maes;
 
     @Override
@@ -58,6 +60,7 @@ public class Fragment_oper_cola extends Fragment {
         edt_celu_clie = (EditText) vista.findViewById(R.id.edt_celu_clie);
         edt_tipo_envi = (EditText) vista.findViewById(R.id.edt_tipo_envi);
         edt_form_pago = (EditText) vista.findViewById(R.id.edt_form_pago);
+        chk_canc      = (CheckBox) vista.findViewById(R.id.chk_canc);
 
 
         sv_codi_envi.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -82,7 +85,12 @@ public class Fragment_oper_cola extends Fragment {
         btn_reco_envi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrar_recojo();
+                String envi_canc = "";
+                if (chk_canc.isChecked())
+                    envi_canc = "SI";
+
+
+                registrar_recojo(envi_canc);
             }
         });
 
@@ -96,6 +104,8 @@ public class Fragment_oper_cola extends Fragment {
 
         btn_entr_envi.setVisibility(View.GONE);
         btn_reco_envi.setVisibility(View.GONE);
+        chk_canc.setVisibility(View.GONE);
+
         edt_nomb_clie.setEnabled(false);
         edt_dire_clie.setEnabled(false);
         edt_refe_clie.setEnabled(false);
@@ -137,7 +147,10 @@ public class Fragment_oper_cola extends Fragment {
                             String refe_dest      = jsonObject.getString("refe_dest").trim();
                             String celu_dest      = jsonObject.getString("celu_dest").trim();
 
-
+                            if (form_pago.equalsIgnoreCase("DEPOSITO"))
+                                chk_canc.setVisibility(View.GONE);
+                            else
+                                chk_canc.setVisibility(View.VISIBLE);
 
 
                             if (esta_oper_reco.equalsIgnoreCase("null")){
@@ -157,7 +170,7 @@ public class Fragment_oper_cola extends Fragment {
                             } else if (esta_entr.equalsIgnoreCase("SI")){
                                 btn_reco_envi.setVisibility(View.GONE);
                                 btn_entr_envi.setVisibility(View.VISIBLE);
-
+                                chk_canc.setVisibility(View.GONE);
                                 edt_nomb_clie.setText(nomb_dest);
                                 edt_dire_clie.setText(dire_dest);
                                 edt_refe_clie.setText(refe_dest);
@@ -201,9 +214,9 @@ public class Fragment_oper_cola extends Fragment {
     }
 
 
-    private void registrar_recojo() {
+    private void registrar_recojo(String envi_canc) {
 
-        String url = "https://www.tsuexpress.com/movil/registrarecojo.php?codi_envi="+codi_envi_maes;
+        String url = "https://www.tsuexpress.com/movil/registrarecojo.php?codi_envi="+codi_envi_maes+"&envi_canc="+envi_canc;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -303,6 +316,8 @@ public class Fragment_oper_cola extends Fragment {
         edt_tipo_envi.setText("");
         btn_reco_envi.setVisibility(View.GONE);
         btn_entr_envi.setVisibility(View.GONE);
+        chk_canc.setChecked(false);
+        chk_canc.setVisibility(View.GONE);
     }
 
 }
