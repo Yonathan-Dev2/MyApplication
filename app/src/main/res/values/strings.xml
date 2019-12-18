@@ -11,4 +11,69 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string-array name="Distritos">
+        <item>DISTRITO</item>
+        <item>ANCON</item>
+        <item>ATE VITARTE</item>
+        <item>BARRANCO</item>
+        <item>BRENA</item>
+        <item>CARABAYLLO</item>
+        <item>CERCADO</item>
+        <item>CHACLACAYO</item>
+        <item>CHORRILLOS</item>
+        <item>CIENEGUILLA</item>
+        <item>COMAS</item>
+        <item>EL AGUSTINO</item>
+        <item>HUAYCAN</item>
+        <item>INDEPENDENCIA</item>
+        <item>JESUS MARIA</item>
+        <item>LA MOLINA</item>
+        <item>LA VICTORIA</item>
+        <item>LINCE</item>
+        <item>LOS OLIVOS</item>
+        <item>LURIGANCHO</item>
+        <item>LURIN</item>
+        <item>MAGDALENA DEL MAR</item>
+        <item>MIRAFLORES</item>
+        <item>PACHACAMAC</item>
+        <item>PUCUSANA</item>
+        <item>PUEBLO LIBRE</item>
+        <item>PUENTE PIEDRA</item>
+        <item>PUNTA HERMOSA</item>
+        <item>PUNTA NEGRA</item>
+        <item>RIMAC</item>
+        <item>SAN BARTOLO</item>
+        <item>SAN BORJA</item>
+        <item>SAN ISIDRO</item>
+        <item>SAN JUAN DE LURIGANCHO</item>
+        <item>SAN JUAN DE MIRAFLORES</item>
+        <item>SAN LUIS</item>
+        <item>SAN MARTIN DE PORRES</item>
+        <item>SAN MIGUEL</item>
+        <item>SANTA ANITA</item>
+        <item>SANTA MARIA DEL MAR</item>
+        <item>SANTA ROSA</item>
+        <item>SANTIAGO DE SURCO</item>
+        <item>SURQUILLO</item>
+        <item>VILLA EL SALVADOR</item>
+        <item>VILLA MARIA DEL TRIUNFO</item>
+    </string-array>
+
+    <string-array name="Zona">
+        <item>ZONA</item>
+        <item>ASENTAMIENTO HUMANO</item>
+        <item>CASERIO</item>
+        <item>CONJUNTO HABITACIONAL</item>
+        <item>COOPERATIVA</item>
+        <item>FUNDO</item>
+        <item>GRUPO</item>
+        <item>PUEBLO JOVEN</item>
+        <item>RESIDENCIAL</item>
+        <item>UNIDAD VECINAL</item>
+        <item>URBANIZACIÓN</item>
+        <item>ZONA INDUSTRIAL</item>
+    </string-array>
 </resources>
+
+

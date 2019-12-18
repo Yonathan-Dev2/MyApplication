@@ -60,7 +60,7 @@ public class toma_foto extends AppCompatActivity {
     ImageView imagen;
     String path;
     String nume_iden, nomb_clie, celu_clie, dire_clie,refe_clie,tipo_envi, tota_pago, iden_dest,nomb_dest,celu_dest,dire_dest,refe_dest,form_pago;
-
+    String dist_clie, dist_dest, zona_clie, zona_dest;
     String nombreImagen="";
     Bitmap bitmap;
     Context contexto;
@@ -108,6 +108,8 @@ public class toma_foto extends AppCompatActivity {
             nume_iden   = envio.getString("nume_iden");
             nomb_clie   = envio.getString("nomb_clie");
             celu_clie   = envio.getString("celu_clie");
+            dist_clie   = envio.getString("dist_clie");
+            zona_clie   = envio.getString("zona_clie");
             dire_clie   = envio.getString("dire_clie");
             refe_clie   = envio.getString("refe_clie");
             tipo_envi   = envio.getString("tipo_envi");
@@ -115,6 +117,8 @@ public class toma_foto extends AppCompatActivity {
             iden_dest   = envio.getString("iden_dest");
             nomb_dest   = envio.getString("nomb_dest");
             celu_dest   = envio.getString("celu_dest");
+            dist_dest   = envio.getString("dist_dest");
+            zona_dest   = envio.getString("zona_dest");
             dire_dest   = envio.getString("dire_dest");
             refe_dest   = envio.getString("refe_dest");
             form_pago   = envio.getString("form_pago");
@@ -371,10 +375,11 @@ public class toma_foto extends AppCompatActivity {
                         Map<String, String> params = new HashMap<>();
                         params.put("nomb_imag", nombreImagen);
                         params.put("imag_depo", imag_captura);
-
                         params.put("nume_iden", nume_iden);
                         params.put("nomb_clie", nomb_clie);
                         params.put("celu_clie", celu_clie);
+                        params.put("dist_clie", dist_clie);
+                        params.put("zona_clie", zona_clie);
                         params.put("dire_clie", dire_clie);
                         params.put("refe_clie", refe_clie);
                         params.put("tipo_envi", tipo_envi);
@@ -382,6 +387,8 @@ public class toma_foto extends AppCompatActivity {
                         params.put("iden_dest", iden_dest);
                         params.put("nomb_dest", nomb_dest);
                         params.put("celu_dest", celu_dest);
+                        params.put("dist_dest", dist_dest);
+                        params.put("zona_dest", zona_dest);
                         params.put("dire_dest", dire_dest);
                         params.put("refe_dest", refe_dest);
                         params.put("form_pago", form_pago);

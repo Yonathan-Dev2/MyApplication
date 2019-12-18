@@ -17,6 +17,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,9 +54,10 @@ public class Fragment_enviar extends Fragment {
     Button      btn_envi;
     TextInputLayout  til_nume_iden, til_nomb_clie, til_celu_clie, til_dire_clie, til_refe_clie, til_iden_dest, til_nomb_dest, til_celu_dest, til_dire_dest, til_refe_dest;
     ImageView img_depo;
+    Spinner spn_dist_clie, spn_dist_dest, spn_zona_clie, spn_zona_dest;
 
 
-    String tipo_envi="", form_pago="";
+    String tipo_envi="", form_pago="", dist_clie="", dist_dest="", zona_clie="", zona_dest="";
     double tota_pago=0;
 
     ProgressDialog pdp = null;
@@ -84,6 +86,11 @@ public class Fragment_enviar extends Fragment {
         edt_celu_dest = (EditText) vista.findViewById(R.id.edt_celu_dest);
         edt_dire_dest = (EditText) vista.findViewById(R.id.edt_dire_dest);
         edt_refe_dest = (EditText) vista.findViewById(R.id.edt_refe_dest);
+        spn_dist_clie = (Spinner) vista.findViewById(R.id.spn_dist_clie);
+        spn_dist_dest = (Spinner) vista.findViewById(R.id.spn_dist_dest);
+
+        spn_zona_clie = (Spinner) vista.findViewById(R.id.spn_zona_clie);
+        spn_zona_dest = (Spinner) vista.findViewById(R.id.spn_zona_dest);
 
 
         til_nume_iden = (TextInputLayout)vista.findViewById(R.id.til_nume_iden);
@@ -100,9 +107,7 @@ public class Fragment_enviar extends Fragment {
 
         img_depo      = (ImageView) vista.findViewById(R.id.img_depo);
 
-
         btn_envi      = (Button) vista.findViewById(R.id.btn_envi);
-
 
         request= Volley.newRequestQueue(getContext());
 
@@ -166,11 +171,25 @@ public class Fragment_enviar extends Fragment {
         btn_envi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tipo_envi.equalsIgnoreCase("")){
-                    Toast.makeText(getContext(), "Seleccine el tipo de envío", Toast.LENGTH_SHORT).show();
-                } else if (form_pago==""){
-                    Toast.makeText(getContext(), "Seleccine la forma de pago", Toast.LENGTH_SHORT).show();
 
+                dist_clie = spn_dist_clie.getSelectedItem().toString();
+                dist_dest = spn_dist_dest.getSelectedItem().toString();
+
+                zona_clie = spn_zona_clie.getSelectedItem().toString();
+                zona_dest = spn_zona_dest.getSelectedItem().toString();
+
+                if (tipo_envi.equalsIgnoreCase("")){
+                    Toast.makeText(getContext(), "SELECCCIONE TIPO DE ENVIO", Toast.LENGTH_SHORT).show();
+                } else if (form_pago==""){
+                    Toast.makeText(getContext(), "SELECCCIONE FORMA DE PAGO", Toast.LENGTH_SHORT).show();
+                } else if (dist_clie.equalsIgnoreCase("DISTRITO")){
+                    Toast.makeText(getContext(), "SELECCIONE DISTRITO DE RECOJO", Toast.LENGTH_SHORT).show();
+                } else if (zona_clie.equalsIgnoreCase("ZONA")){
+                    Toast.makeText(getContext(), "SELECCIONE LA ZONA DE RECOJO", Toast.LENGTH_SHORT).show();
+                } else if (dist_dest.equalsIgnoreCase("DISTRITO")){
+                    Toast.makeText(getContext(), "SELECCIONE DISTRITO DE ENVIO", Toast.LENGTH_SHORT).show();
+                } else if (zona_dest.equalsIgnoreCase("ZONA")){
+                    Toast.makeText(getContext(), "SELECCIONE LA ZONA DE ENVIO", Toast.LENGTH_SHORT).show();
                 } else  if (validarNume_iden(edt_nume_iden.getText().toString()) && validarNomb_clie(edt_nomb_clie.getText().toString()) &&
                             validarCelu_clie(edt_celu_clie.getText().toString()) && validarDire_clie(edt_dire_clie.getText().toString()) &&
                             validarRefe_clie(edt_refe_clie.getText().toString()) && validarIden_dest(edt_iden_dest.getText().toString()) &&
@@ -186,11 +205,24 @@ public class Fragment_enviar extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (tipo_envi.equalsIgnoreCase("")){
-                    Toast.makeText(getContext(), "Seleccine el tipo de envío", Toast.LENGTH_SHORT).show();
-                } else if (form_pago==""){
-                    Toast.makeText(getContext(), "Seleccine la forma de pago", Toast.LENGTH_SHORT).show();
+                dist_clie = spn_dist_clie.getSelectedItem().toString();
+                dist_dest = spn_dist_dest.getSelectedItem().toString();
 
+                zona_clie = spn_zona_clie.getSelectedItem().toString();
+                zona_dest = spn_zona_dest.getSelectedItem().toString();
+
+                if (tipo_envi.equalsIgnoreCase("")){
+                    Toast.makeText(getContext(), "SELECCIONE TIPO DE ENVIO", Toast.LENGTH_SHORT).show();
+                } else if (form_pago==""){
+                    Toast.makeText(getContext(), "SELECCIONE FORMA DE PAGO", Toast.LENGTH_SHORT).show();
+                } else if (dist_clie.equalsIgnoreCase("DISTRITO")){
+                    Toast.makeText(getContext(), "SELECCIONE DISTRITO DE RECOJO", Toast.LENGTH_SHORT).show();
+                } else if (zona_clie.equalsIgnoreCase("ZONA")){
+                    Toast.makeText(getContext(), "SELECCIONE LA ZONA DE RECOJO", Toast.LENGTH_SHORT).show();
+                } else if (dist_dest.equalsIgnoreCase("DISTRITO")){
+                    Toast.makeText(getContext(), "SELECCIONE DISTRITO DE ENVIO", Toast.LENGTH_SHORT).show();
+                } else if (zona_dest.equalsIgnoreCase("ZONA")){
+                    Toast.makeText(getContext(), "SELECCIONE LA ZONA DE ENVIO", Toast.LENGTH_SHORT).show();
                 } else  if (validarNume_iden(edt_nume_iden.getText().toString()) && validarNomb_clie(edt_nomb_clie.getText().toString()) &&
                             validarCelu_clie(edt_celu_clie.getText().toString()) && validarDire_clie(edt_dire_clie.getText().toString()) &&
                             validarRefe_clie(edt_refe_clie.getText().toString()) && validarIden_dest(edt_iden_dest.getText().toString()) &&
@@ -202,6 +234,8 @@ public class Fragment_enviar extends Fragment {
                             t.putExtra("nume_iden",edt_nume_iden.getText().toString());
                             t.putExtra("nomb_clie",edt_nomb_clie.getText().toString());
                             t.putExtra("celu_clie",edt_celu_clie.getText().toString());
+                            t.putExtra("dist_clie",dist_clie);
+                            t.putExtra("zona_clie",zona_clie);
                             t.putExtra("dire_clie",edt_dire_clie.getText().toString());
                             t.putExtra("refe_clie",edt_refe_clie.getText().toString());
                             t.putExtra("tipo_envi",tipo_envi);
@@ -209,6 +243,8 @@ public class Fragment_enviar extends Fragment {
                             t.putExtra("iden_dest",edt_iden_dest.getText().toString());
                             t.putExtra("nomb_dest",edt_nomb_dest.getText().toString());
                             t.putExtra("celu_dest",edt_celu_dest.getText().toString());
+                            t.putExtra("dist_dest",dist_dest);
+                            t.putExtra("zona_dest",zona_dest);
                             t.putExtra("dire_dest",edt_dire_dest.getText().toString());
                             t.putExtra("refe_dest",edt_refe_dest.getText().toString());
                             t.putExtra("form_pago",form_pago);
@@ -218,7 +254,6 @@ public class Fragment_enviar extends Fragment {
 
             }
         });
-
 
         return vista;
 
@@ -240,7 +275,7 @@ public class Fragment_enviar extends Fragment {
         String url = "https://www.tsuexpress.com/movil/envio.php?nume_iden="+nume_iden+"&nomb_clie="+nomb_clie+"&celu_clie="+celu_clie
                 +"&dire_clie="+dire_clie+"&refe_clie="+refe_clie+"&iden_dest="+iden_dest+"&nomb_dest="+nomb_dest+"&celu_dest="+celu_dest
                 +"&dire_dest="+dire_dest+"&refe_dest="+refe_dest+"&tipo_envi="+tipo_envi+"&tota_pago="+tota_pago+"&iden_dest="+iden_dest
-                +"&form_pago="+form_pago;
+                +"&form_pago="+form_pago+"&dist_clie="+dist_clie+"&dist_dest="+dist_dest+"&zona_clie="+zona_clie+"&zona_dest="+zona_dest;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -315,12 +350,17 @@ public class Fragment_enviar extends Fragment {
 
         tipo_envi="";
         form_pago="";
+        dist_dest="";
+        dist_dest="";
         tota_pago=0;
         img_depo.setVisibility(View.GONE);
         txt_tota_pago.setVisibility(View.GONE);
         txt_mens_pago.setVisibility(View.GONE);
 
-        //edt_nume_iden.requestFocus();
+        spn_dist_clie.setSelection(0);
+        spn_dist_dest.setSelection(0);
+        spn_zona_clie.setSelection(0);
+        spn_zona_dest.setSelection(0);
 
     }
 
