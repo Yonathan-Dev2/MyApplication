@@ -44,7 +44,7 @@ public class Fragment_asig_reco extends Fragment {
     JsonObjectRequest jsonObjectRequest;
 
     Spinner spn_codi_envi, spn_cola;
-    EditText edt_nomb_clie, edt_dire_clie, edt_tipo_envi;
+    EditText edt_nomb_clie, edt_dire_clie, edt_tipo_envi, edt_dist_clie, edt_zona_clie;
     String  codi_envi = "", codi_usua;
     Button  btn_asig_reco;
 
@@ -62,10 +62,15 @@ public class Fragment_asig_reco extends Fragment {
         edt_dire_clie = (EditText) vista.findViewById(R.id.edt_dire_clie);
         edt_tipo_envi = (EditText) vista.findViewById(R.id.edt_tipo_envi);
         btn_asig_reco = (Button)   vista.findViewById(R.id.btn_asig_reco);
+        edt_dist_clie = (EditText) vista.findViewById(R.id.edt_dist_clie);
+        edt_zona_clie = (EditText) vista.findViewById(R.id.edt_zona_clie);
 
         edt_nomb_clie.setEnabled(false);
         edt_dire_clie.setEnabled(false);
         edt_tipo_envi.setEnabled(false);
+        edt_dist_clie.setEnabled(false);
+        edt_zona_clie.setEnabled(false);
+
 
         spn_codi_envi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -320,6 +325,8 @@ public class Fragment_asig_reco extends Fragment {
         edt_nomb_clie.setText("");
         edt_dire_clie.setText("");
         edt_tipo_envi.setText("");
+        edt_dist_clie.setText("");
+        edt_zona_clie.setText("");
         spn_cola.setSelection(0);
     }
 

@@ -46,7 +46,7 @@ public class Fragmen_asig_entr extends Fragment {
     JsonObjectRequest jsonObjectRequest;
 
     Spinner spn_codi_envi, spn_cola;
-    EditText edt_nomb_clie, edt_dire_clie, edt_tipo_envi;
+    EditText edt_nomb_clie, edt_dire_clie, edt_tipo_envi, edt_dist_dest, edt_zona_dest;
     String  codi_envi = "", codi_usua;
     Button btn_asig_entr;
     CheckBox chk_canc;
@@ -67,10 +67,14 @@ public class Fragmen_asig_entr extends Fragment {
         edt_tipo_envi = (EditText) vista.findViewById(R.id.edt_tipo_envi);
         btn_asig_entr = (Button)   vista.findViewById(R.id.btn_asig_entr);
         chk_canc      = (CheckBox) vista.findViewById(R.id.chk_canc);
+        edt_dist_dest = (EditText) vista.findViewById(R.id.edt_dist_dest);
+        edt_zona_dest = (EditText) vista.findViewById(R.id.edt_zona_dest);
 
         edt_nomb_clie.setEnabled(false);
         edt_dire_clie.setEnabled(false);
         edt_tipo_envi.setEnabled(false);
+        edt_dist_dest.setEnabled(false);
+        edt_zona_dest.setEnabled(false);
         //chk_canc.setEnabled(false);
 
         spn_codi_envi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -339,6 +343,8 @@ public class Fragmen_asig_entr extends Fragment {
         edt_nomb_clie.setText("");
         edt_dire_clie.setText("");
         edt_tipo_envi.setText("");
+        edt_dist_dest.setText("");
+        edt_zona_dest.setText("");
         spn_cola.setSelection(0);
         chk_canc.setChecked(false);
     }

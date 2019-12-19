@@ -50,7 +50,7 @@ public class Fragment_rece_soli extends Fragment {
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
     EditText edt_nomb_clie, edt_acti_hora, edt_celu_clie, edt_tipo_envi, edt_form_pago, edt_nomb_dest, edt_dire_clie, edt_refe_clie;
-    EditText edt_dire_dest, edt_refe_dest;
+    EditText edt_dire_dest, edt_refe_dest, edt_dist_clie, edt_zona_clie, edt_dist_dest, edt_zona_dest;
     ImageView img_ruta_comp;
     Button btn_acep_soli, btn_rech_soli;
     String  codi_envi = "";
@@ -78,6 +78,10 @@ public class Fragment_rece_soli extends Fragment {
         img_ruta_comp = (ImageView) vista.findViewById(R.id.img_ruta_comp);
         btn_acep_soli = (Button)    vista.findViewById(R.id.btn_acep_soli);
         btn_rech_soli = (Button)    vista.findViewById(R.id.btn_rech_soli);
+        edt_dist_clie = (EditText)  vista.findViewById(R.id.edt_dist_clie);
+        edt_zona_clie = (EditText)  vista.findViewById(R.id.edt_zona_clie);
+        edt_dist_dest = (EditText)  vista.findViewById(R.id.edt_dist_dest);
+        edt_zona_dest = (EditText)  vista.findViewById(R.id.edt_zona_dest);
 
         edt_acti_hora.setEnabled(false);
         edt_celu_clie.setEnabled(false);
@@ -216,8 +220,13 @@ public class Fragment_rece_soli extends Fragment {
                             String ruta_comp = jsonObject.getString("ruta_comp");
                             String nomb_dest = jsonObject.getString("nomb_dest");
 
+                            String dist_clie = jsonObject.getString("dist_clie");
+                            String zona_clie = jsonObject.getString("zona_clie");
                             String dire_clie = jsonObject.getString("dire_clie");
                             String refe_clie = jsonObject.getString("refe_clie");
+
+                            String dist_dest = jsonObject.getString("dist_dest");
+                            String zona_dest = jsonObject.getString("zona_dest");
                             String dire_dest = jsonObject.getString("dire_dest");
                             String refe_dest = jsonObject.getString("refe_dest");
 
@@ -227,8 +236,12 @@ public class Fragment_rece_soli extends Fragment {
                             edt_tipo_envi.setText(tipo_envi);
                             edt_form_pago.setText(form_pago);
                             edt_nomb_dest.setText(nomb_dest);
+                            edt_dist_clie.setText(dist_clie);
+                            edt_zona_clie.setText(zona_clie);
                             edt_dire_clie.setText(dire_clie);
                             edt_refe_clie.setText(refe_clie);
+                            edt_dist_dest.setText(dist_dest);
+                            edt_zona_dest.setText(zona_dest);
                             edt_dire_dest.setText(dire_dest);
                             edt_refe_dest.setText(refe_dest);
 
@@ -296,12 +309,16 @@ public class Fragment_rece_soli extends Fragment {
         String nomb_clie = edt_nomb_clie.getText().toString().trim();
         String tipo_envi = edt_tipo_envi.getText().toString().trim();
         String nomb_dest = edt_nomb_dest.getText().toString().trim();
+        String dist_clie = edt_dist_clie.getText().toString().trim();
+        String zona_clie = edt_zona_clie.getText().toString().trim();
         String dire_clie = edt_dire_clie.getText().toString().trim();
         String refe_clie = edt_refe_clie.getText().toString().trim();
+        String dist_dest = edt_dist_dest.getText().toString().trim();
+        String zona_dest = edt_zona_dest.getText().toString().trim();
         String dire_dest = edt_dire_dest.getText().toString().trim();
         String refe_dest = edt_refe_dest.getText().toString().trim();
 
-        String url = "https://www.tsuexpress.com/movil/actualizarrecepcion.php?codi_envi="+codi_envi+"&esta_soli="+esta_soli+"&nomb_clie="+nomb_clie+"&tipo_envi="+tipo_envi+"&nomb_dest="+nomb_dest+"&dire_clie="+dire_clie+"&refe_clie="+refe_clie+"&dire_dest="+dire_dest+"&refe_dest="+refe_dest;
+        String url = "https://www.tsuexpress.com/movil/actualizarrecepcion.php?codi_envi="+codi_envi+"&esta_soli="+esta_soli+"&nomb_clie="+nomb_clie+"&tipo_envi="+tipo_envi+"&nomb_dest="+nomb_dest+"&dire_clie="+dire_clie+"&refe_clie="+refe_clie+"&dire_dest="+dire_dest+"&refe_dest="+refe_dest+"&dist_clie="+dist_clie+"&zona_clie="+zona_clie+"&dist_dest="+dist_dest+"&zona_dest="+zona_dest;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -354,6 +371,10 @@ public class Fragment_rece_soli extends Fragment {
         edt_refe_clie.setText("");
         edt_dire_dest.setText("");
         edt_refe_dest.setText("");
+        edt_dist_clie.setText("");
+        edt_zona_clie.setText("");
+        edt_dist_dest.setText("");
+        edt_zona_dest.setText("");
         img_ruta_comp.setVisibility(View.GONE);
     }
 
