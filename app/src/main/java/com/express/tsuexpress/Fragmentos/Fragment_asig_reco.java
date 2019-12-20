@@ -186,9 +186,15 @@ public class Fragment_asig_reco extends Fragment {
                             String dire_clie = jsonObject.getString("dire_clie");
                             String tipo_envi = jsonObject.getString("tipo_envi");
 
+                            String dist_clie = jsonObject.getString("dist_clie");
+                            String zona_clie = jsonObject.getString("zona_clie");
+
                             edt_nomb_clie.setText(nomb_clie);
                             edt_dire_clie.setText(dire_clie);
                             edt_tipo_envi.setText(tipo_envi);
+                            edt_dist_clie.setText(dist_clie);
+                            edt_zona_clie.setText(zona_clie);
+
                             pdp.dismiss();
 
 

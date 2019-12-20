@@ -180,7 +180,6 @@ public class Fragmen_asig_entr extends Fragment {
     }
 
 
-
     private void visu_envi(String codi_envi) {
 
         String url = "https://www.tsuexpress.com/movil/entregalist.php?codi_envi="+codi_envi;
@@ -199,10 +198,16 @@ public class Fragmen_asig_entr extends Fragment {
                             String dire_clie = jsonObject.getString("dire_dest");
                             String tipo_envi = jsonObject.getString("tipo_envi");
                             String envi_canc = jsonObject.getString("envi_canc");
+                            String dist_dest = jsonObject.getString("dist_dest");
+                            String zona_dest = jsonObject.getString("zona_dest");
 
                             edt_nomb_clie.setText(nomb_clie);
                             edt_dire_clie.setText(dire_clie);
                             edt_tipo_envi.setText(tipo_envi);
+
+                            edt_dist_dest.setText(dist_dest);
+                            edt_zona_dest.setText(zona_dest);
+
 
                             if (envi_canc.equalsIgnoreCase("SI"))
                                 chk_canc.setChecked(true);

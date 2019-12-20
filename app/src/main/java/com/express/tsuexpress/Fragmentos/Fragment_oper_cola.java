@@ -41,6 +41,7 @@ public class Fragment_oper_cola extends Fragment {
     Button btn_reco_envi, btn_entr_envi;
     SearchView sv_codi_envi;
     EditText edt_nomb_clie, edt_dire_clie, edt_refe_clie, edt_celu_clie, edt_tipo_envi, edt_form_pago;
+    EditText edt_dist, edt_zona;
     ProgressDialog pdp = null;
     CheckBox chk_canc;
     private String codi_envi_maes;
@@ -60,6 +61,8 @@ public class Fragment_oper_cola extends Fragment {
         edt_celu_clie = (EditText) vista.findViewById(R.id.edt_celu_clie);
         edt_tipo_envi = (EditText) vista.findViewById(R.id.edt_tipo_envi);
         edt_form_pago = (EditText) vista.findViewById(R.id.edt_form_pago);
+        edt_dist      = (EditText) vista.findViewById(R.id.edt_dist);
+        edt_zona      = (EditText) vista.findViewById(R.id.edt_zona);
         chk_canc      = (CheckBox) vista.findViewById(R.id.chk_canc);
 
 
@@ -133,6 +136,8 @@ public class Fragment_oper_cola extends Fragment {
                         try {
                             JSONObject jsonObject =  json.getJSONObject(0);
                             String nomb_clie      = jsonObject.getString("nomb_clie").trim();
+                            String dist_clie      = jsonObject.getString("dist_clie").trim();
+                            String zona_clie      = jsonObject.getString("zona_clie").trim();
                             String dire_clie      = jsonObject.getString("dire_clie").trim();
                             String refe_clie      = jsonObject.getString("refe_clie").trim();
                             String celu_clie      = jsonObject.getString("celu_clie").trim();
@@ -143,6 +148,8 @@ public class Fragment_oper_cola extends Fragment {
                             String esta_entr      = jsonObject.getString("esta_entr").trim();
 
                             String nomb_dest      = jsonObject.getString("nomb_dest").trim();
+                            String dist_dest      = jsonObject.getString("dist_dest").trim();
+                            String zona_dest      = jsonObject.getString("zona_dest").trim();
                             String dire_dest      = jsonObject.getString("dire_dest").trim();
                             String refe_dest      = jsonObject.getString("refe_dest").trim();
                             String celu_dest      = jsonObject.getString("celu_dest").trim();
@@ -157,6 +164,10 @@ public class Fragment_oper_cola extends Fragment {
                                 btn_entr_envi.setVisibility(View.GONE);
                                 btn_reco_envi.setVisibility(View.VISIBLE);
                                 edt_nomb_clie.setText(nomb_clie);
+
+                                edt_dist.setText(dist_clie);
+                                edt_zona.setText(zona_clie);
+
                                 edt_dire_clie.setText(dire_clie);
                                 edt_refe_clie.setText(refe_clie);
                                 edt_celu_clie.setText(celu_clie);
@@ -172,6 +183,10 @@ public class Fragment_oper_cola extends Fragment {
                                 btn_entr_envi.setVisibility(View.VISIBLE);
                                 chk_canc.setVisibility(View.GONE);
                                 edt_nomb_clie.setText(nomb_dest);
+
+                                edt_dist.setText(dist_dest);
+                                edt_zona.setText(zona_dest);
+
                                 edt_dire_clie.setText(dire_dest);
                                 edt_refe_clie.setText(refe_dest);
                                 edt_celu_clie.setText(celu_dest);
@@ -255,10 +270,7 @@ public class Fragment_oper_cola extends Fragment {
         pdp.setContentView(R.layout.progressbar_esperar);
         pdp.setCancelable(false);
         pdp.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-
     }
-
 
     private void registrar_entrega() {
 
@@ -314,6 +326,8 @@ public class Fragment_oper_cola extends Fragment {
         edt_celu_clie.setText("");
         edt_form_pago.setText("");
         edt_tipo_envi.setText("");
+        edt_dist.setText("");
+        edt_zona.setText("");
         btn_reco_envi.setVisibility(View.GONE);
         btn_entr_envi.setVisibility(View.GONE);
         chk_canc.setChecked(false);

@@ -25,155 +25,188 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/background_light"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <SearchView
-            android:id="@+id/sv_codi_envi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/borde_edit"
-            android:clickable="true"
-            android:iconifiedByDefault="false"
-            android:inputType="number"
-            android:queryHint="Codigo de envío" />
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/borde_edit">
-
-            <EditText
-                android:id="@+id/edt_nomb_clie"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombres y apellidos"
-                android:textColor="@android:color/background_dark" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/borde_edit">
-
-            <EditText
-                android:id="@+id/edt_dire_clie"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Dirección"
-                android:textColor="@android:color/background_dark" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/borde_edit">
-
-            <EditText
-                android:id="@+id/edt_refe_clie"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Referencia"
-                android:textColor="@android:color/background_dark" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/borde_edit">
-
-            <EditText
-                android:id="@+id/edt_celu_clie"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Telefono"
-                android:textColor="@android:color/background_dark" />
-        </android.support.design.widget.TextInputLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/background_light"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <SearchView
+                android:id="@+id/sv_codi_envi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borde_edit"
+                android:clickable="true"
+                android:iconifiedByDefault="false"
+                android:inputType="number"
+                android:queryHint="Codigo de envío" />
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="170dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/borde_edit"
-                android:gravity="center">
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/edt_tipo_envi"
+                    android:id="@+id/edt_nomb_clie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="Tipo"
+                    android:hint="Nombres y apellidos"
                     android:textColor="@android:color/background_dark" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/borde_edit">
 
                 <EditText
-                    android:id="@+id/edt_form_pago"
+                    android:id="@+id/edt_dist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:hint="Forma de pago"
+                    android:hint="Distrito"
                     android:textColor="@android:color/background_dark" />
             </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borde_edit">
+
+                <EditText
+                    android:id="@+id/edt_zona"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Zona"
+                    android:textColor="@android:color/background_dark" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borde_edit">
+
+                <EditText
+                    android:id="@+id/edt_dire_clie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Dirección"
+                    android:textColor="@android:color/background_dark" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borde_edit">
+
+                <EditText
+                    android:id="@+id/edt_refe_clie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Referencia"
+                    android:textColor="@android:color/background_dark" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borde_edit">
+
+                <EditText
+                    android:id="@+id/edt_celu_clie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telefono"
+                    android:textColor="@android:color/background_dark" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/borde_edit"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/edt_tipo_envi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:hint="Tipo"
+                        android:textColor="@android:color/background_dark" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/borde_edit">
+
+                    <EditText
+                        android:id="@+id/edt_form_pago"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:hint="Forma de pago"
+                        android:textColor="@android:color/background_dark" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/chk_canc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="CANCELADO"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_entr_envi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/relleno_buton"
+                android:text="Entrega"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_reco_envi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/relleno_buton"
+                android:text="Recojo"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
         </LinearLayout>
-
-        <CheckBox
-            android:id="@+id/chk_canc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="CANCELADO"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btn_entr_envi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/relleno_buton"
-            android:text="Entrega"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btn_reco_envi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/relleno_buton"
-            android:text="Recojo"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
