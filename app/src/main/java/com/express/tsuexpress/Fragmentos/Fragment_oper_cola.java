@@ -115,6 +115,8 @@ public class Fragment_oper_cola extends Fragment {
         edt_celu_clie.setEnabled(false);
         edt_tipo_envi.setEnabled(false);
         edt_form_pago.setEnabled(false);
+        edt_dist.setEnabled(false);
+        edt_zona.setEnabled(false);
 
         request= Volley.newRequestQueue(getContext());
 

@@ -200,17 +200,25 @@ public class Fragmen_asig_entr extends Fragment {
                             String envi_canc = jsonObject.getString("envi_canc");
                             String dist_dest = jsonObject.getString("dist_dest");
                             String zona_dest = jsonObject.getString("zona_dest");
+                            String form_pago = jsonObject.getString("form_pago");
 
                             edt_nomb_clie.setText(nomb_clie);
                             edt_dire_clie.setText(dire_clie);
                             edt_tipo_envi.setText(tipo_envi);
-
                             edt_dist_dest.setText(dist_dest);
                             edt_zona_dest.setText(zona_dest);
 
 
                             if (envi_canc.equalsIgnoreCase("SI"))
                                 chk_canc.setChecked(true);
+
+                            if (form_pago.equalsIgnoreCase("DEPOSITO")){
+                                chk_canc.setChecked(true);
+                                chk_canc.setEnabled(false);
+                            } else{
+                                chk_canc.setEnabled(true);
+                            }
+
 
                             pdp.dismiss();
 
