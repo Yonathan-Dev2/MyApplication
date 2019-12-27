@@ -219,9 +219,7 @@ public class Fragmen_asig_entr extends Fragment {
                                 chk_canc.setEnabled(true);
                             }
 
-
                             pdp.dismiss();
-
 
                         } catch (JSONException e) {
                             e.printStackTrace();

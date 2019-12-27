@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 public class cuadro_mensaje  {
 
+    public cuadro_mensaje() {
+    }
+
     public cuadro_mensaje(Context Contexto, String msj) {
 
         final Dialog dialogo = new Dialog(Contexto);
@@ -31,4 +34,6 @@ public class cuadro_mensaje  {
 
         dialogo.show();
     }
+
+
 }
