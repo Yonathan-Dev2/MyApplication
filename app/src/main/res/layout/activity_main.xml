@@ -25,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/colorPrimary"
-        app:itemIconTint="#000000"
         app:menu="@menu/menu_navigation">
 
     </android.support.design.widget.BottomNavigationView>

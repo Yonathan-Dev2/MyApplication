@@ -532,7 +532,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/relleno_buton"
                 android:text="Confirmar envío"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@android:color/background_light"
                 android:textStyle="bold" />
 
             <android.support.design.widget.TextInputLayout

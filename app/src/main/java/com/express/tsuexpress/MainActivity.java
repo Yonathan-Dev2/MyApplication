@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        fab_scre_shot.setVisibility(View.GONE);
 
         fab_scre_shot.setOnClickListener(new View.OnClickListener() {
             @Override
