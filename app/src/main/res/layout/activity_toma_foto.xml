@@ -59,7 +59,7 @@
         android:background="@drawable/relleno_buton"
         android:onClick="onclick"
         android:text="Capturar Fotografía"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
@@ -71,7 +71,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/relleno_buton"
         android:text="confirmar envio"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
@@ -83,7 +83,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/relleno_buton"
         android:text="SALIR"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
 </LinearLayout>
